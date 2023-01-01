@@ -1,0 +1,42 @@
+﻿@using websiterazor;
+@{
+    Page.Title = "Популярные серии комиксов";
+    //Layout = "Страница макета";
+    Layout = "~/_Layout.cshtml";
+    Util util = new Util();
+}
+    @section meta{
+        <meta content="" name="keywords" />
+        <meta content="" name="description" />
+    }
+<style>
+    .gallery_wrapper{
+        display:flex;
+        flex-wrap:wrap;
+        width: 100%;
+        max-width: 70%;
+        margin: 0 auto;
+    }
+    .gallery_wrapper img{
+        width: 200px;
+        border: 4px solid #ccc;
+        margin: 1px;
+    }
+</style>
+<div class="contentWrapper" style="padding-top:90px">
+    <div class="gallery_wrapper">@util.getAllDataType("preview")</div>
+</div>
+<div style="display:none;" class="links_controller">@util.getAllDataType("id")</div>
+<script>
+    let all_prews = document.querySelector('.gallery_wrapper').innerHTML;
+    let all_ids = document.querySelector('.links_controller').innerHTML;
+    document.querySelector('.gallery_wrapper').innerHTML = "";
+    document.querySelector('.links_controller').innerHTML = "";
+    all_prews = all_prews.split('~');
+    all_ids = all_ids.split('~');
+    console.log(all_prews);
+    console.log(all_ids);
+    for (let i = 0; i < all_prews.length-1; i++) {
+        document.querySelector('.gallery_wrapper').innerHTML += "<a href='article?id=" + all_ids[i] + "'><img src='img/" + all_prews[i] + "'></a>"
+    }
+</script>

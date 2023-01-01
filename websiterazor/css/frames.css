@@ -1,0 +1,114 @@
+﻿body {
+}
+li a.dropdown {
+    -webkit-border-bottom-right-radius: 0;
+    -webkit-border-bottom-left-radius: 0;
+    -moz-border-radius-bottomright: 0;
+    -moz-border-radius-bottomleft: 0;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.li a span {
+    font-size: 11px;
+    color: #999;
+    text-transform: none;
+}
+
+li:hover a.dropdown {
+    -webkit-border-bottom-right-radius: 0;
+    -webkit-border-bottom-left-radius: 0;
+    -moz-border-radius-bottomright: 0;
+    -moz-border-radius-bottomleft: 0;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+li ul.dropdown {
+    cursor: default;
+    animation-name: hidecard;
+    animation-duration: 400ms;
+    background: rgba(0,0,0,0.8);
+    display: none;
+    color: #fed327;
+    font-weight: 500;
+    font-size: 16px;
+    text-align: center;
+    position: absolute;
+    top: 20%;
+    width: 200px;
+    overflow: hidden;
+    width: 200px;
+    height: 300px;
+    padding: 5px;
+    border: 1px solid #000;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    border-radius: 6px;
+}
+li:hover ul.dropdown {
+    transform: translate(0%,-20%);
+    display: block;
+    animation-name: showcard;
+    animation-duration: 400ms;
+}
+@keyframes showcard {
+    0% {
+        opacity: 0;
+    }
+    20%{
+        opacity: 0;
+        transform: translate(0,10%);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(0%,-20%);
+    }
+}
+@keyframes hidecard {
+    0% {
+        opacity: 1;
+        transform: translate(0%,-20%);
+    }
+    100% {
+        opacity: 0;
+        transform: translate(0,10%);
+    }
+}
+.header_padding {
+    width: 100%;
+    height: 55px;
+    background: #222 url(../img/layout/siteHeaderPattern.png) left top repeat;
+}
+.main_link {
+    font-family: "v_CCSmash";
+    src: url(v_CCSmash_v2.2.ttf);
+    font-size: 22px;
+    text-shadow: -2px 2px 3px black;
+}
+input{
+    font: 13px "Droid Sans", "Helvetica Neue", Helvetica, sans-serif;
+    padding: 9px;
+    color: #333;
+    background: #fff;
+    border: 1px solid #ddd;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    -webkit-transition: 200ms;
+    -moz-transition: 200ms;
+}
+
+input{
+    font: 13px "Helvetica Neue", Helvetica, sans-serif; /* Droid Sans doesn't work with passwords in IE */
+}
+
+    input:focus{
+        border-color: #bbb;
+        -webkit-box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+        -moz-box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+        box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+    }

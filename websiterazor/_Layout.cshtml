@@ -1,0 +1,133 @@
+﻿@*  Страница макета, здесь размещается контент общий для страниц содержания.*@
+
+@*
+    Страницы макета уровневые и могут быть вложены в друг друга.
+    Как видно из расширения файла уровневой страницы _Layout.cshtml
+    оно не отличается от других страниц .cshtml. Принадлежность к
+    странице макета определяется только наличием на ней обязательного запроса
+    тела страницы содержания:
+    @RenderBody(),
+    на странице макета возможно объявление одной или нескольких секций
+    внедрения кода со страниц содержания:
+    @RenderSection([название секции], required: [обязательность секции на странице содержания])
+*@
+    @using websiterazor;
+@{
+    Util util = new Util();
+}
+
+@*
+    @Page.Title - динамически создаваемая переменная c
+    в которой на дочерних страницах содержания
+    будет определяться контент Title веб-страницы
+
+    // Определение программных объектов
+*@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>@Page.Title</title>
+    <meta charset="utf-8" />
+    @*
+         Объявление секции для
+         ключевых слов и метаописания,
+        "required: false" - определение необязательности присутствия данной секции на страницах содержания.
+         Секций на странице уровня можно создавать сколько угодно много,
+         для большей динамичности и интерактивности сайта.
+    *@
+    @RenderSection("meta", required: false)
+    <link rel="" href="" type="image/x-icon" />
+    <link href="css/main.css" rel="stylesheet" type="text/css" />
+    <link href="css/frames.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <!-- Site Wrapper Start -->
+    <div class="siteWrapper">
+        <!-- Site Header -->
+        <div class="siteHeaderShadow">
+        </div>
+        <div class="siteHeader">
+            <div class="center" style="display:flex;justify-content:space-between;">
+                @* <div class="logo_wrapper" style="">
+                    </div>*@
+                <a style="font-size:30px;display:flex;justify-content:center;align-items:center;" href="/">Курсовая Федоса</a>
+                <ul class="navigation">
+                    <li>
+                        <a class="main_link" href="search"><strong>Поиск</strong> <br /></a>
+                    </li>
+                    <li>
+                        <a class="main_link" href="comics.cshtml"><strong>Серии</strong><br /><span></span></a>
+                        @*<ul class="dropdown">
+                                <li><a href="1gbvds.cshtml"><strong>VDS серверы</strong> 1GB.RU</a></li>
+                                <li><a href="timewebvds.cshtml"><strong>Virtual Servers</strong> TIMEWEB.RU</a></li>
+                                <li><a href="vds.cshtml"><strong>Hyper-V</strong> Москва, Франкфурт</a></li>
+                                <li><a href="vds.cshtml"><strong>Xen</strong> Санкт-Петербург</a></li>
+                            </ul>*@
+                    </li>
+                    <li>
+                        <a class="main_link" href="previews.cshtml"><strong>Обложки</strong></a>
+                    </li>
+                    <li>
+                        <a class="main_link" href="contacts.cshtml"><strong>Контакты</strong></a>
+                    </li>
+                    <li>
+                        <a class="main_link" style="margin-left:20px;" href="account.cshtml"><strong>Аккаунт</strong></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        @* Место вставки содержимого дочерней страницы,
+            на страницах макета обязательно должен быть вызов данного метода *@
+        @RenderBody()
+
+        <!-- Site Footer -->
+        <div class="siteFooter">
+            <div class="center clearfix">
+                <div class="column tiny">
+                    <h5>Основные страницы</h5>
+                    <ul class="columnNavigation">
+                        <li><a href="search.cshtml">Поиск</a></li>
+                        <li><a href="vds.cshtml">Серии</a></li>
+                        <li><a href="vds.cshtml">Обложки</a></li>
+                        <li><a href="contacts.cshtml">Контакты</a></li>
+                        <li><a href="account.cshtml">Аккаунт</a></li>
+                    </ul>
+                </div>
+                <div class="column tiny">
+                    <h5>Соц. сети</h5>
+                    <ul class="columnNavigation">
+                        <li><a href="">instagram</a></li>
+                        <li><a href="about.cshtml">telegram</a></li>
+                        <li><a href="about.cshtml">vk</a></li>
+                        <li><a href="about.cshtml">viber</a></li>
+                    </ul>
+                </div>
+                <div class="column tiny">
+                    <h5>Центр <span>Поддержки</span></h5>
+                    <ul class="columnNavigation">
+                        <li><a class="iconSmallPhone" href="">+375 29 539-70-18</a></li>
+                        <li><a class="iconSmallChat" href="contacts.cshtml">サヨナラボイ#7839</a></li>
+                        <li><a class="iconSmallEmail" href="contacts.cshtml">fedosenko.03@mail.ru</a></li>
+                        <li><a class="iconSmallClient" href="">UID: 710020235</a></li>
+                    </ul>
+                </div>
+                <div class="column tiny last">
+                    <h5><span>Федосенко</span></h5>
+                    <p class="text">Курсовая работа Федосенко Даниила</p>
+                </div>
+            </div>
+        </div>
+        <!-- Site Footer Bar -->
+        <div class="siteFooterBar">
+            <div class="center">
+                <a class="backToTop" href="#">Наверх</a><span>2022 &copy;ComicsBase. Курсовая работа Федосенко Даниила.</span>
+            </div>
+        </div>
+    </div>
+    <!-- Site Wrapper Ends -->
+</body>
+</html>
+<script charset="utf-8" src="js/jquery-1.7.2.min.js" type="text/javascript"></script>
+<script charset="utf-8" src="js/main.js" type="text/javascript"></script>
+@*<script charset="utf-8" src="js/regnlog.js" type="text/javascript"></script>*@

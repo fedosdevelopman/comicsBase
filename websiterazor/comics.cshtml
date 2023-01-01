@@ -1,0 +1,174 @@
+﻿@using websiterazor;
+@{
+    Util util = new Util();
+}
+@{
+    Page.Title = "Самые читаемые серии";
+    Layout = "~/_Layout.cshtml";
+}
+<style>
+    .article_wrapper {
+        padding-top: 10px;
+        display:flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+    .article {
+        width:45%;
+        margin: 15px 0px;
+        background: #f8f8f8;
+        border: 1px solid #dddddd;
+        border-radius: 10px;
+        display: flex;
+        padding: 1px;
+    }
+
+        .article img {
+            width: 200px;
+            margin: 5px;
+        }
+
+        .article h2 {
+            color: #e0b301;
+            padding: 10px 0 3px 30px;
+            margin: 0;
+        }
+        .article h5 {
+            color: #e0b301;
+            padding-left:30px;
+            margin: 0 2px;
+            font-size: 17px;    
+        }
+        .article p {
+            font-size: 16px;
+            padding: 10px 0 3px 30px;
+        }
+        .ps{ display: flex;}
+        .ps_w{
+            max-width:80%;
+            height: 110px;
+            overflow:hidden;
+        }
+    .ps img{
+        width:70px;
+        height:110px;
+    }
+    .prev{
+        display:flex;
+        justify-content:flex-start;
+        align-items:center;
+    }
+    .v{
+        display:flex;
+        flex-direction:column;
+        justify-content:space-around;
+    }
+</style>
+<div class="contentWrapper" style="padding-top:90px;">
+    <div style="width:100%;">
+        <div class="article_wrapper">
+            <div class="article">
+                <img src="~/img/previews/01.jpg">
+                <div class="v">
+                    <div>
+                        <h2>Совершенный Человек-паук</h2>
+                        <p>Доктор Осьминог в теле Питера Паркера и соответственно Человека-Паука пытается улучшить жизнь двух его новых ипостасей с помощью своего гениального разума. Для Человека-Паука он улучшил костюм, добавив новые возможности. Но вот как Питера Паркера родные подозревают, что что-то с ним не так.</p>
+                    </div>
+                    <div class="prev">
+                        <h5>Комиксы в серии:</h5>
+                        <div class="ps_w">
+                            <div class="ps">
+                                <a href="~/article?id=1"><img src="~/img/previews/01.jpg"></a>
+                                <a href="~/article?id=2"><img src="~/img/previews/02.jpg"></a>
+                                <a href="~/article?id=3"><img src="~/img/previews/03.jpg"></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="article">
+                <img src="~/img/previews/asm_129.jpg">
+                <div class="v">
+                    <div>
+                        <h2>Удивительный Человек-паук</h2>
+                        <p>
+                            Серия комиксов о Человеке-пауке, которая издаётся с 1963 года. Первые 38 выпусков создавались силами Стэна Ли и Стива Дитко. После над серией работало множество известных писателей и художников.
+                        </p>
+                    </div>
+                    <div class="prev">
+                        <h5>Комиксы в серии:</h5>
+                        <div class="ps_w">
+                            <div class="ps">
+                                <a href="~/article?id=4"><img src="~/img/previews/asm_129.jpg"></a>
+                                <a href="~/article?id=5"><img src="~/img/previews/asm_141.jpg"></a>
+                                <a href="~/article?id=6"><img src="~/img/previews/asm_316.jpg"></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="article">
+                <img src="~/img/previews/superman1.jpg">
+                <div class="v">
+                    <div>
+                        <h2>Супермен (2011)</h2>
+                        <p>
+                            Новые приключения Супермена начинаются прямо здесь! Как все изменится мир вокруг Человека из Стали? Как это отразится на Лоис Лейн и "Дэйли Плэнет"? Времени на ответы нет, т.к Супермен должен остановить ужасающую угрозу, причиной которой он сам мог стать!
+                        </p>
+                    </div>
+                    <div class="prev">
+                        <h5>Комиксы в серии:</h5>
+                        <div class="ps_w">
+                            <div class="ps">
+                                <a href="~/article?id=8"><img src="~/img/previews/superman1.jpg"></a>
+                                <a href="~/article?id=9"><img src="~/img/previews/superman2.jpg"></a>
+                                <a href="~/article?id=10"><img src="~/img/previews/superman3.jpg"></a>
+                                <a href="~/article?id=11"><img src="~/img/previews/superman4.jpg"></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="article">
+                <img src="~/img/previews/bsm1.jpg">
+                <div class="v">
+                    <div>
+                        <h2>Бэтмен/Супермен</h2>
+                        <p>
+                            Комикс рассказывает о новых случаях в жизни двух наиболее известных супергероев во вселенной DC — Темном Рыцаре и Супермене. Злодей Металло начинает вершить преступления, Бэтмен и Супермен объединяют свои силы для расследования его злодеяний.
+                        </p>
+                    </div>
+                    <div class="prev">
+                        <h5>Комиксы в серии:</h5>
+                        <div class="ps_w">
+                            <div class="ps">
+                                <a href="~/article?id=12"><img src="~/img/previews/bsm1.jpg"></a>
+                                <a href="~/article?id=13"><img src="~/img/previews/bsm2.jpg"></a>
+                                <a href="~/article?id=14"><img src="~/img/previews/bsm3.jpg"></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="article">
+                <img src="~/img/previews/smn.jpg">
+                <div class="v">
+                    <div>
+                        <h2>Человек-паук. Нуар</h2>
+                        <p>
+                            Оригинальный Паук обычно раздавал преступникам пару тумаков, после чего передавал их полиции. Паркер же из Нуара в лучшем случае избивает преступников до полусмерти. В первое время своей супергеройской деятельности Питер активно пользовался пистолетом своего дяди, который был заряжен отнюдь не холостыми патронами.
+                        </p>
+                    </div>
+                    <div class="prev">
+                        <h5>Комиксы в серии:</h5>
+                        <div class="ps_w">
+                            <div class="ps">
+                                <a href="~/article?id=7"><img src="~/img/previews/smn.jpg"></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

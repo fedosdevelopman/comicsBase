@@ -1,0 +1,166 @@
+﻿@using websiterazor
+@{
+    string id = HttpContext.Current.Request.QueryString["id"];
+    Layout = "~/_Layout.cshtml";
+    Util _util = new Util();
+    if(id != null)
+    {
+        Page.Title = _util.getDataById(id,"name", "comicbooks");
+    }
+    else
+    {
+        Page.Title ="Комикс не найден";
+    }
+}
+
+@* определим содержание секции meta для ключевых слов и метаописания страницы *@
+@section meta{
+    <meta content="" name="keywords" />
+    <meta content="" name="description" />
+}
+
+<style>
+    .contentWrapper{
+        background: #f6f6f6;
+    }
+    .article {
+        margin: 15px 0px;
+        background: #f8f8f8;
+        border: 1px solid #dddddd;
+        border-radius: 10px;
+        display: flex;
+    }
+
+        .article img {
+            width: 160px;
+            margin: 5px;
+        }
+
+        .article h2 {
+            color: #e0b301;
+            padding-left: 30px;
+        }
+
+        .article p {
+            font-size: 16px;
+            padding: 30px;
+        }
+    .comics_wrapper{
+        width:100%;
+        max-width:80%;
+        margin: 0 auto;
+        text-align:center;
+    }
+    .comics_wrapper img{
+        border: 10px solid #ccc;
+    }
+    .controll_size{
+        text-align:center;
+        width:9%;
+        height:12%;
+        border-radius: 10px;
+        position: fixed;
+        top:10%;
+        left: 5px;
+    }
+    .controll_size h4{
+        margin-top: 10px;
+    }
+</style>
+<div class="contentWrapper" style="padding-top:90px;">
+    <div class="controll_size" >
+        <h4>Масштаб: <span class="size"></span></h4>
+        <div style="display:flex;justify-content:space-around;padding-top: 10px;"> 
+            <button class="less">-</button>
+            <button class="more">+</button>
+        </div>
+    </div>
+    <div style="position:fixed;top:25%;left:5px">
+        <a class="backToTop" style="font-size:20px;" href="#">Наверх</a>
+    </div>
+    <div style="max-width:800px;margin:0 auto;padding-top:10px;">
+        <div class="article">
+            <img class="preview" src="img/@_util.getDataById(id, "preview","comicbooks")">
+            <div class="v">
+                <h2>@_util.getDataById(id, "name", "comicbooks")</h2>
+                <p>@_util.getDataById(id, "descript", "comicbooks")</p>
+            </div>
+        </div>
+    </div>
+    <div class="comics_wrapper">
+        <img class="comics_img" src="img/@_util.getDataById(id, "comics","comicbooks")">
+    </div>
+</div>
+<div class="id" style="display:none;">@id</div>
+<script>
+    if (document.location.pathname == "/article.cshtml") {
+        document.location.href = encodeURI("/default.cshtml");
+    }
+    if (localStorage.getItem("user_loged") != null) {
+        let p = document.querySelector('.preview').getAttribute("src");
+        let c = document.querySelector('.id').innerHTML;
+        let story = localStorage.getItem("story");
+        let story_id = localStorage.getItem("storys_id");
+        if (story == "~" || story == null || story == "") {
+            localStorage.setItem("story", p);
+            localStorage.setItem("storys_id", c);
+        } else {
+            let ids = story.split('~');
+            if (ids.indexOf(p) != -1) {
+                let new_story = "";
+                for (let i = 0; i < ids.length; i++) {
+                    if (ids[i] == p || ids[i]=="") { continue; }
+                    else {
+                        new_story += "~"+ids[i];
+                    }
+                }
+                new_story += "~" + p;
+                localStorage.setItem("story", new_story);
+            } else {
+                story += "~" + p;
+                localStorage.setItem("story", story);
+            }
+            let cids = story_id.split('~');
+            if (cids.indexOf(c) != -1) {
+                let new_story = "";
+                for (let i = 0; i < cids.length; i++) {
+                    if (cids[i] == c || cids[i] == "") { continue; }
+                    else {
+                        new_story += "~" + cids[i];
+                    }
+                }
+                new_story += "~" + c;
+                localStorage.setItem("storys_id", new_story);
+            } else {
+                story_id += "~" + c;
+                localStorage.setItem("storys_id", story_id);
+            }
+        }
+    } 
+    let size;
+    if (localStorage.getItem("size") != null) {
+        size = localStorage.getItem("size");
+    } else { size = 100; }
+    size = Number(size);
+    let less = document.querySelector('.less');
+    let more = document.querySelector('.more');
+    let comics_img = document.querySelector('.comics_img');
+    comics_img.style.width = size + "%";
+    document.querySelector('.size').innerHTML = size + "%";
+    less.addEventListener("click", () => {
+        if ((size-10) >= 10 && (size-10) <= 100) {
+            size = size-10;
+            comics_img.style.width = size + "%";
+            document.querySelector('.size').innerHTML = size + "%";
+            localStorage.setItem("size", size);
+        }
+    });
+    more.addEventListener("click", () => {
+        if ((size + 10) >= 10 && (size + 10) <= 100) {
+            size = size + 10;
+            comics_img.style.width = size + "%";
+            localStorage.setItem("size", size);
+            document.querySelector('.size').innerHTML = size + "%";
+        }
+    });
+</script>

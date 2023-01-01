@@ -1,0 +1,127 @@
+C:\Users\Fedos\Downloads\websiterazor\websiterazor\bin\websiterazor.dll.config
+C:\Users\Fedos\Downloads\websiterazor\websiterazor\bin\websiterazor.dll
+C:\Users\Fedos\Downloads\websiterazor\websiterazor\bin\websiterazor.pdb
+C:\Users\Fedos\Downloads\websiterazor\websiterazor\obj\Debug\websiterazor.csproj.AssemblyReference.cache
+C:\Users\Fedos\Downloads\websiterazor\websiterazor\obj\Debug\websiterazor.csproj.CoreCompileInputs.cache
+C:\Users\Fedos\Downloads\websiterazor\websiterazor\obj\Debug\websiterazor.dll
+C:\Users\Fedos\Downloads\websiterazor\websiterazor\obj\Debug\websiterazor.pdb
+C:\Users\Fedos\Desktop\comicsBase\websiterazor\obj\Debug\websiterazor.csproj.AssemblyReference.cache
+C:\Users\Fedos\Desktop\comicsBase\websiterazor\obj\Debug\websiterazor.csproj.CoreCompileInputs.cache
+C:\Users\Fedos\Desktop\comicsBase\websiterazor\obj\Debug\websiterazor.dll
+C:\Users\Fedos\Desktop\comicsBase\websiterazor\obj\Debug\websiterazor.pdb
+C:\Users\Fedos\Desktop\comicsBase\websiterazor\bin\websiterazor.dll.config
+C:\Users\Fedos\Desktop\comicsBase\websiterazor\bin\websiterazor.dll
+C:\Users\Fedos\Desktop\comicsBase\websiterazor\bin\websiterazor.pdb
+C:\Users\Fedos\Desktop\comicsBase\websiterazor\bin\Azure.Core.dll
+C:\Users\Fedos\Desktop\comicsBase\websiterazor\bin\Azure.Identity.dll
+C:\Users\Fedos\Desktop\comicsBase\websiterazor\bin\Microsoft.Data.SqlClient.dll
+C:\Users\Fedos\Desktop\comicsBase\websiterazor\bin\Microsoft.Identity.Client.dll
+C:\Users\Fedos\Desktop\comicsBase\websiterazor\bin\Microsoft.Identity.Client.Extensions.Msal.dll
+C:\Users\Fedos\Desktop\comicsBase\websiterazor\bin\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\Fedos\Desktop\comicsBase\websiterazor\bin\Microsoft.IdentityModel.Logging.dll
+C:\Users\Fedos\Desktop\comicsBase\websiterazor\bin\Microsoft.IdentityModel.Protocols.dll
+C:\Users\Fedos\Desktop\comicsBase\websiterazor\bin\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\Fedos\Desktop\comicsBase\websiterazor\bin\Microsoft.IdentityModel.Tokens.dll
+C:\Users\Fedos\Desktop\comicsBase\websiterazor\bin\System.Configuration.ConfigurationManager.dll
+C:\Users\Fedos\Desktop\comicsBase\websiterazor\bin\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\Fedos\Desktop\comicsBase\websiterazor\bin\System.Security.AccessControl.dll
+C:\Users\Fedos\Desktop\comicsBase\websiterazor\bin\System.Security.Cryptography.ProtectedData.dll
+C:\Users\Fedos\Desktop\comicsBase\websiterazor\bin\System.Security.Permissions.dll
+C:\Users\Fedos\Desktop\comicsBase\websiterazor\bin\System.Security.Principal.Windows.dll
+C:\Users\Fedos\Desktop\comicsBase\websiterazor\bin\System.Text.Encodings.Web.dll
+C:\Users\Fedos\Desktop\comicsBase\websiterazor\bin\System.Text.Json.dll
+C:\Users\Fedos\Desktop\comicsBase\websiterazor\bin\System.ValueTuple.dll
+C:\Users\Fedos\Desktop\comicsBase\websiterazor\bin\System.Memory.dll
+C:\Users\Fedos\Desktop\comicsBase\websiterazor\bin\System.Buffers.dll
+C:\Users\Fedos\Desktop\comicsBase\websiterazor\bin\Azure.Core.xml
+C:\Users\Fedos\Desktop\comicsBase\websiterazor\bin\Azure.Identity.xml
+C:\Users\Fedos\Desktop\comicsBase\websiterazor\bin\Microsoft.Data.SqlClient.pdb
+C:\Users\Fedos\Desktop\comicsBase\websiterazor\bin\Microsoft.Data.SqlClient.xml
+C:\Users\Fedos\Desktop\comicsBase\websiterazor\bin\Microsoft.Identity.Client.xml
+C:\Users\Fedos\Desktop\comicsBase\websiterazor\bin\Microsoft.Identity.Client.Extensions.Msal.xml
+C:\Users\Fedos\Desktop\comicsBase\websiterazor\bin\Microsoft.IdentityModel.JsonWebTokens.xml
+C:\Users\Fedos\Desktop\comicsBase\websiterazor\bin\Microsoft.IdentityModel.Logging.xml
+C:\Users\Fedos\Desktop\comicsBase\websiterazor\bin\Microsoft.IdentityModel.Protocols.xml
+C:\Users\Fedos\Desktop\comicsBase\websiterazor\bin\Microsoft.IdentityModel.Protocols.OpenIdConnect.xml
+C:\Users\Fedos\Desktop\comicsBase\websiterazor\bin\Microsoft.IdentityModel.Tokens.xml
+C:\Users\Fedos\Desktop\comicsBase\websiterazor\bin\System.Configuration.ConfigurationManager.xml
+C:\Users\Fedos\Desktop\comicsBase\websiterazor\bin\System.IdentityModel.Tokens.Jwt.xml
+C:\Users\Fedos\Desktop\comicsBase\websiterazor\bin\System.Security.AccessControl.xml
+C:\Users\Fedos\Desktop\comicsBase\websiterazor\bin\System.Security.Permissions.xml
+C:\Users\Fedos\Desktop\comicsBase\websiterazor\bin\System.Security.Principal.Windows.xml
+C:\Users\Fedos\Desktop\comicsBase\websiterazor\bin\System.Text.Encodings.Web.xml
+C:\Users\Fedos\Desktop\comicsBase\websiterazor\bin\System.Text.Json.xml
+C:\Users\Fedos\Desktop\comicsBase\websiterazor\bin\System.ValueTuple.xml
+C:\Users\Fedos\Desktop\comicsBase\websiterazor\bin\de\Microsoft.Data.SqlClient.resources.dll
+C:\Users\Fedos\Desktop\comicsBase\websiterazor\bin\es\Microsoft.Data.SqlClient.resources.dll
+C:\Users\Fedos\Desktop\comicsBase\websiterazor\bin\fr\Microsoft.Data.SqlClient.resources.dll
+C:\Users\Fedos\Desktop\comicsBase\websiterazor\bin\it\Microsoft.Data.SqlClient.resources.dll
+C:\Users\Fedos\Desktop\comicsBase\websiterazor\bin\ja\Microsoft.Data.SqlClient.resources.dll
+C:\Users\Fedos\Desktop\comicsBase\websiterazor\bin\ko\Microsoft.Data.SqlClient.resources.dll
+C:\Users\Fedos\Desktop\comicsBase\websiterazor\bin\pt-BR\Microsoft.Data.SqlClient.resources.dll
+C:\Users\Fedos\Desktop\comicsBase\websiterazor\bin\ru\Microsoft.Data.SqlClient.resources.dll
+C:\Users\Fedos\Desktop\comicsBase\websiterazor\bin\zh-Hans\Microsoft.Data.SqlClient.resources.dll
+C:\Users\Fedos\Desktop\comicsBase\websiterazor\bin\zh-Hant\Microsoft.Data.SqlClient.resources.dll
+C:\Users\Fedos\Desktop\comicsBase\websiterazor\obj\Debug\websiterazor.csproj.CopyComplete
+C:\Users\Fedos\Desktop\comicsBase\websiterazor\bin\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\Fedos\Desktop\comicsBase\websiterazor\bin\System.Runtime.CompilerServices.Unsafe.xml
+E:\C# files\comicsBase\websiterazor\bin\websiterazor.dll.config
+E:\C# files\comicsBase\websiterazor\bin\websiterazor.dll
+E:\C# files\comicsBase\websiterazor\bin\websiterazor.pdb
+E:\C# files\comicsBase\websiterazor\bin\Azure.Core.dll
+E:\C# files\comicsBase\websiterazor\bin\Azure.Identity.dll
+E:\C# files\comicsBase\websiterazor\bin\Microsoft.Data.SqlClient.dll
+E:\C# files\comicsBase\websiterazor\bin\Microsoft.Identity.Client.dll
+E:\C# files\comicsBase\websiterazor\bin\Microsoft.Identity.Client.Extensions.Msal.dll
+E:\C# files\comicsBase\websiterazor\bin\Microsoft.IdentityModel.JsonWebTokens.dll
+E:\C# files\comicsBase\websiterazor\bin\Microsoft.IdentityModel.Logging.dll
+E:\C# files\comicsBase\websiterazor\bin\Microsoft.IdentityModel.Protocols.dll
+E:\C# files\comicsBase\websiterazor\bin\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+E:\C# files\comicsBase\websiterazor\bin\Microsoft.IdentityModel.Tokens.dll
+E:\C# files\comicsBase\websiterazor\bin\System.Configuration.ConfigurationManager.dll
+E:\C# files\comicsBase\websiterazor\bin\System.IdentityModel.Tokens.Jwt.dll
+E:\C# files\comicsBase\websiterazor\bin\System.Runtime.CompilerServices.Unsafe.dll
+E:\C# files\comicsBase\websiterazor\bin\System.Security.AccessControl.dll
+E:\C# files\comicsBase\websiterazor\bin\System.Security.Cryptography.ProtectedData.dll
+E:\C# files\comicsBase\websiterazor\bin\System.Security.Permissions.dll
+E:\C# files\comicsBase\websiterazor\bin\System.Security.Principal.Windows.dll
+E:\C# files\comicsBase\websiterazor\bin\System.Text.Encodings.Web.dll
+E:\C# files\comicsBase\websiterazor\bin\System.Text.Json.dll
+E:\C# files\comicsBase\websiterazor\bin\System.ValueTuple.dll
+E:\C# files\comicsBase\websiterazor\bin\System.Memory.dll
+E:\C# files\comicsBase\websiterazor\bin\System.Buffers.dll
+E:\C# files\comicsBase\websiterazor\bin\Azure.Core.xml
+E:\C# files\comicsBase\websiterazor\bin\Azure.Identity.xml
+E:\C# files\comicsBase\websiterazor\bin\Microsoft.Data.SqlClient.pdb
+E:\C# files\comicsBase\websiterazor\bin\Microsoft.Data.SqlClient.xml
+E:\C# files\comicsBase\websiterazor\bin\Microsoft.Identity.Client.xml
+E:\C# files\comicsBase\websiterazor\bin\Microsoft.Identity.Client.Extensions.Msal.xml
+E:\C# files\comicsBase\websiterazor\bin\Microsoft.IdentityModel.JsonWebTokens.xml
+E:\C# files\comicsBase\websiterazor\bin\Microsoft.IdentityModel.Logging.xml
+E:\C# files\comicsBase\websiterazor\bin\Microsoft.IdentityModel.Protocols.xml
+E:\C# files\comicsBase\websiterazor\bin\Microsoft.IdentityModel.Protocols.OpenIdConnect.xml
+E:\C# files\comicsBase\websiterazor\bin\Microsoft.IdentityModel.Tokens.xml
+E:\C# files\comicsBase\websiterazor\bin\System.Configuration.ConfigurationManager.xml
+E:\C# files\comicsBase\websiterazor\bin\System.IdentityModel.Tokens.Jwt.xml
+E:\C# files\comicsBase\websiterazor\bin\System.Runtime.CompilerServices.Unsafe.xml
+E:\C# files\comicsBase\websiterazor\bin\System.Security.AccessControl.xml
+E:\C# files\comicsBase\websiterazor\bin\System.Security.Permissions.xml
+E:\C# files\comicsBase\websiterazor\bin\System.Security.Principal.Windows.xml
+E:\C# files\comicsBase\websiterazor\bin\System.Text.Encodings.Web.xml
+E:\C# files\comicsBase\websiterazor\bin\System.Text.Json.xml
+E:\C# files\comicsBase\websiterazor\bin\System.ValueTuple.xml
+E:\C# files\comicsBase\websiterazor\bin\de\Microsoft.Data.SqlClient.resources.dll
+E:\C# files\comicsBase\websiterazor\bin\es\Microsoft.Data.SqlClient.resources.dll
+E:\C# files\comicsBase\websiterazor\bin\fr\Microsoft.Data.SqlClient.resources.dll
+E:\C# files\comicsBase\websiterazor\bin\it\Microsoft.Data.SqlClient.resources.dll
+E:\C# files\comicsBase\websiterazor\bin\ja\Microsoft.Data.SqlClient.resources.dll
+E:\C# files\comicsBase\websiterazor\bin\ko\Microsoft.Data.SqlClient.resources.dll
+E:\C# files\comicsBase\websiterazor\bin\pt-BR\Microsoft.Data.SqlClient.resources.dll
+E:\C# files\comicsBase\websiterazor\bin\ru\Microsoft.Data.SqlClient.resources.dll
+E:\C# files\comicsBase\websiterazor\bin\zh-Hans\Microsoft.Data.SqlClient.resources.dll
+E:\C# files\comicsBase\websiterazor\bin\zh-Hant\Microsoft.Data.SqlClient.resources.dll
+E:\C# files\comicsBase\websiterazor\obj\Debug\websiterazor.csproj.AssemblyReference.cache
+E:\C# files\comicsBase\websiterazor\obj\Debug\websiterazor.csproj.CoreCompileInputs.cache
+E:\C# files\comicsBase\websiterazor\obj\Debug\websiterazor.csproj.CopyComplete
+E:\C# files\comicsBase\websiterazor\obj\Debug\websiterazor.dll
+E:\C# files\comicsBase\websiterazor\obj\Debug\websiterazor.pdb

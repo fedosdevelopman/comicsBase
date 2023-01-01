@@ -1,0 +1,126 @@
+﻿
+@{
+    Page.Title = "Контактные данные";
+    //Layout = "Страница макета";
+    Layout = "~/_Layout.cshtml";
+}
+
+@section meta{
+    <meta content="Контактные данные" name="description" />
+}
+<style>
+    .contacts_wrapper {
+        padding-top: 10px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .contacts{
+    width:45%;
+    margin: 15px 0px;
+    background: #f8f8f8;
+    border: 1px solid #dddddd;
+    border-radius: 10px;
+    padding: 1px;
+    margin:2px;
+    }
+    .contacts a,
+    .contacts span{
+        padding-left: 50px;
+        text-decoration:none;
+        color:#000;
+        font-size: 20px;
+        font-weight: 500;
+    }
+    .contacts h1 {
+        font-size: 25px;
+        text-align:center;
+        margin: 10px 0;
+        padding:0;
+        color: #000;
+        font-weight:700;
+    }
+    .contact_link{
+        position:relative;
+        width:45%;
+        height:42px;
+        border:2px solid #ccc;
+        border-radius:10px;
+        display:flex;
+        justify-content:flex-start;
+        align-items:center;
+        background:#fff;
+        margin:1px;
+    }
+    .contact_links_wrapper{
+        display:flex;
+        justify-content:center;
+        flex-wrap:wrap;
+        padding-bottom: 30px;
+    }
+    .vk::before,
+    .tg::before,
+    .tt::before,
+    .inst::before,
+    .gen::before,
+    .mail::before,
+    .tel::before,
+    .cord::before
+    {
+        content: "";
+        display: block;
+        width: 40px;
+        height: 40px;
+        background-size: contain;
+        position: absolute;
+        top: 2%;
+        left: 1%;
+    }
+    .vk::before{ background-image:url("/img/icons/vk64.png"); }
+    .tg::before{ background-image:url("/img/icons/telegram.png"); }
+    .inst::before{ background-image:url("/img/icons/inst.png"); }
+    .tt::before{ background-image:url("/img/icons/tiktok.png"); }
+    .cord::before{ background-image:url("/img/icons/discord.png"); }
+    .gen::before{ background-image:url("/img/icons/gen.png"); }
+    .mail::before{ background-image:url("/img/icons/email.png"); }
+    .tel::before{ background-image:url("/img/icons/tel.png"); }
+</style>
+<!-- Content Wrapper -->
+<div class="contentWrapper" style="padding-top:90px">
+    <div class="contacts_wrapper">
+        <div class="contacts">
+            <h1>Соц. сети:</h1>
+            <div class="contact_links_wrapper">
+                <div class="contact_link">
+                    <a class="tg" href="#">Telegram</a>
+                </div>
+                <div class="contact_link">
+                    <a class="vk" href="#">Вконтакте</a>
+                </div>
+                <div class="contact_link">
+                    <a class="inst" href="#">Instagram</a>
+                </div>
+                <div class="contact_link">
+                    <a class="tt" href="#">TikTok</a>
+                </div>
+            </div>
+        </div>
+        <div class="contacts">
+            <h1>Другие способы связаться:</h1>
+            <div class="contact_links_wrapper">
+                <div class="contact_link">
+                    <span class="cord" href="">サヨナラボイ#7839</span>
+                </div>
+                <div class="contact_link">
+                    <span class="gen" href="#">UID: 710020235</span>
+                </div>
+                <div class="contact_link">
+                    <span class="mail" href="#">fedosenko.03@mail.ru</span>
+                </div>
+                <div class="contact_link">
+                    <span class="tel" href="#">+375 29 539-70-18</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

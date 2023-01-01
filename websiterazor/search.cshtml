@@ -1,0 +1,179 @@
+﻿@*
+    www.interestprograms.ru
+    исходные коды
+*@
+@using websiterazor
+@{
+
+    string search = HttpContext.Current.Request.QueryString["search"];
+    if(search == null)
+    {
+        Page.Title = "Ищите интересующие вас комиксы";
+    }
+    else
+    {
+        Page.Title = "Результаты поиска по запросу: " + search + "";
+    }
+
+    //Layout = "Страница макета";
+    Layout = "~/_Layout.cshtml";
+    Util _util = new Util();
+}
+<style>
+    .input_hints{
+        max-height: 93px;
+        background:#fff;
+        padding:0;
+        margin:0;
+        display:flex;
+        flex-direction:column;
+        overflow: auto;
+        width: 40%;
+        position:absolute;
+        z-index:1000;
+    }
+    .input_hints span{
+        padding: 5px 0;
+        border-bottom: 1px solid #f8f8f8;
+        font-size: 17px;
+        cursor: pointer;
+        margin-left: 33px;
+    }
+    .input_hints span:hover {
+        background: #dddddd;
+    }
+    .search_title {
+        color: grey;
+        font-weight: 300;
+        display:none;
+    }
+    .search_result {
+        width: 70%;
+        margin: 0 auto;
+        padding-bottom: 15px;
+    }
+    .article{
+        margin: 15px 0px;
+        background: #f8f8f8;
+        border: 1px solid #dddddd;
+        border-radius: 10px;
+        display:flex;
+    }
+    .article img{
+        width: 160px;
+        margin: 5px;
+    }
+    .article h2 {
+        color: #e0b301;
+        padding-left: 30px;
+    }
+    .article p {
+        font-size: 16px;
+        padding: 30px;
+    }
+</style>
+<div class="contentWrapper" style="padding-top:90px;">
+    <div style="width: 70%;margin: 0 auto 20px; position:relative;">
+        <h3 style="color:grey;font-weight:300;padding: 10px 0px;">Здесь можно найти интересующие вас комиксы:</h3>
+        <div style="display:flex;justify-content:space-around;">
+            <input class="search_input" style="width:80%;font-size:17px;" class="search_input">
+            <button class="search_btn">Поиск</button>
+        </div>
+        <div class="input_hints">
+        </div>
+    </div>
+    <div class="search_result">
+        <h3 class="search_title">Результат поиска по запросу </h3>
+    </div>
+    <div  style="width: 70%;margin: 0 auto 20px; position:relative;">
+        <h3 style="color:grey;font-weight:300">Рекомендуем к прочтению:</h3>
+        <div style="display:flex;flex-wrap: wrap;justify-content:space-around;">
+            <div class="column tiny">
+                <li style="list-style:none;">
+                    <a href="article?id=1"><img src="~/img/@_util.getDataById("1","preview","comicbooks")" style="width: 200px;"></a>
+                    <ul class="dropdown">
+                        <li><p>@_util.getDataById("1", "descript", "comicbooks")</p></li>
+                    </ul>
+                </li>
+                <h4 style="margin-top:0;text-align:center;"><a href="article?id=1"><strong>@_util.getDataById("1", "name", "comicbooks")</strong> <br /></a></h4>
+            </div>
+            <div class="column tiny">
+                <li style="list-style:none;">
+                    <a href="article?id=2"><img src="~/img/@_util.getDataById("2","preview","comicbooks")" style="width: 200px;"></a>
+                    <ul class="dropdown">
+                        <li><p>@_util.getDataById("2", "descript", "comicbooks")</p></li>
+                    </ul>
+                </li>
+                <h4 style="margin-top:0;text-align:center;"><a href="article?id=2"><strong>@_util.getDataById("2", "name", "comicbooks")</strong> <br /></a></h4>
+            </div>
+            <div class="column tiny">
+                <li style="list-style:none;">
+                    <a href="article?id=4"><img src="~/img/@_util.getDataById("4","preview","comicbooks")" style="width: 200px;"></a>
+                    <ul class="dropdown">
+                        <li><p>@_util.getDataById("4", "descript", "comicbooks")</p></li>
+                    </ul>
+                </li>
+                <h4 style="margin-top:0;text-align:center;"><a href="article?id=4"><strong>@_util.getDataById("4", "name", "comicbooks")</strong> <br /></a></h4>
+            </div>
+            <div class="column tiny">
+                <li style="list-style:none;">
+                    <a href="article?id=3"><img src="~/img/@_util.getDataById("3","preview","comicbooks")" style="width: 200px;"></a>
+                    <ul class="dropdown">
+                        <li><p>@_util.getDataById("3", "descript", "comicbooks")</p></li>
+                    </ul>
+                </li>
+                <h4 style="margin-top:0;text-align:center;"><a href="article?id=3"><strong>@_util.getDataById("3", "name", "comicbooks")</strong> <br /></a></h4>
+            </div>
+        </div>
+    </div>
+</div>
+        <div class="controller" style="display:none;">@_util.getAllComicsNames()</div>
+        <div class="controller2" style="">@_util.getSearched(search)</div>
+        <script>
+            let all_names = String(document.querySelector('.controller').innerHTML);
+            document.querySelector('.controller').innerHTML = "";
+            let search = document.querySelector('.search_input');
+            search.oninput = () => {
+                if (search.value == "") {
+                    document.querySelector('.input_hints').innerHTML = "";
+                } else {
+                    let res = String(search.value);
+                    res = res.toLowerCase();
+                    let names = all_names.split(';');
+                    document.querySelector('.input_hints').innerHTML = "";
+                    let hints = document.querySelector('.input_hints');
+                    for (let i = 0; i < names.length - 1; i++) {
+                        let elem = names[i].toLowerCase();
+                        if (elem.includes(res)) {
+                            hints.innerHTML += "<span>" + names[i] + "</span>";
+                        }
+                    }
+                }
+            }
+            let h = document.querySelector('.input_hints');
+            h.addEventListener("click", (event) => {
+                search.value = event.target.closest('span').innerHTML;
+                document.querySelector('.input_hints').innerHTML = "";
+            });
+            let search_btn = document.querySelector('.search_btn');
+            search_btn.addEventListener("click", () => {
+                if (search.value.trim() != "") {
+                    let data = search.value.split(' ');
+                    let d = "";
+                    for (let i = 0; i < data.length; i++) {
+                        d += data[i] + ";";
+                    }
+                    document.location.href = encodeURI("/search.cshtml?search=" + d);
+                }
+            });
+            let contr2 = document.querySelector('.controller2');
+            if (contr2.innerHTML != "") {
+                document.querySelector('.controller2').style.display = "block";
+                let data = contr2.innerHTML.split(';');
+                contr2.innerHTML = "";
+                console.log(data);
+                for (let i = 0; i < ((data.length - 1) / 4); i++) {
+                    document.querySelector('.search_result').innerHTML += "<div class='article'><a href='article?id=" + data[(i * 4) + 0] + "'><img src='/img/" + data[(i * 4) + 3] + "'></a><div class='v'><a href='article?id=" + data[(i * 4) + 0] +"'><h2>" + data[(i * 4) + 1] + "</h2></a><p>" + data[(i * 4) + 2]+"</p></div></div>";
+                }
+            }
+        </script>

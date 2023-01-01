@@ -1,0 +1,189 @@
+﻿@using websiterazor;
+@{
+    Util util = new Util();
+    Page.Title = "Аккаунт";
+    Layout = "~/_Layout.cshtml";
+    string n = HttpContext.Current.Request.QueryString["name"];
+    string m = HttpContext.Current.Request.QueryString["mail"];
+    string p = HttpContext.Current.Request.QueryString["pass"];
+}
+<style>
+    .register_block,
+    .login_block{
+        padding-top: 20px;
+        width: 60%;
+        display: flex;
+        flex-direction: column;
+    }
+    .block_wrapper {
+        max-width: 900px;
+        margin: 0 auto;
+        padding-top: 10px;
+    }
+    .register,
+    .login{
+        display:flex;
+        justify-content:space-around;
+    }
+    .hidden{
+        display:none;
+    }
+    .switch_auth {
+        cursor: pointer;
+    }
+    .user_block p {
+        font-size: 20px;
+        color: #ccc;
+        padding: 10px 0;
+    }
+    .user_name,
+    .user_mail,
+    .user_date{
+        font-size: 25px;
+        padding-left: 10px;
+        color: #000;
+    }
+    .user{
+        position:relative;
+    }
+    .i{
+        width:120px;
+        margin: 0 4px;
+        height: 180px;
+    }
+</style>
+<div class="contentWrapper" style="padding-top:90px;">
+    <div class="block_wrapper">
+        <div class="register hidden">
+            <div class="register_block">
+                <label for="name">Имя/Никнейм</label>
+                <input id="name" name="name" type="text" />
+                <label for="email">Email</label>
+                <input id="email" name="email" type="text" />
+                <label for="pass">Пароль</label>
+                <input id="pass" name="pass" type="password" />
+                <label for="pass2">Повторить пароль</label>
+                <input id="pass2" name="pass2" type="password" />
+                <div style="margin-top:30px;">
+                    <button type="submit" class="register_btn colorButton">Подтвердить</button>
+                </div>
+            </div>
+            <div style="display:flex;justify-content:center;align-items:center;">
+                <div style="width:300px;display:flex;flex-direction:column;justify-content:center;text-align:center;">
+                    <img src="~/img/icons/log-in.png" style="width:30%;margin: 0 auto;padding-right:30px;">
+                    <span class="switch_auth" style="padding-top:20px;font-size:20px;">Уже есть аккаунт? <a class="log_btn">Авторизуйтесь!</a></span>
+                </div>
+            </div>
+        </div>
+        <div class="login ">
+            <div class="login_block">
+                <label for="mail">Email</label>
+                <input id="email" name="email" type="text" />
+                <label for="pass">Пароль</label>
+                <input id="pass" name="pass" type="password" />
+                <div style="margin-top:30px;">
+                    <a ><button type="submit" class="colorButton login_btn" >Войти</button></a>
+                </div>
+            </div>
+            <div style="display:flex;justify-content:center;align-items:center;">
+                <div style="width:300px;display:flex;flex-direction:column;justify-content:center;text-align:center;">
+                    <img src="~/img/icons/edit.png" style="width:30%;margin: 0 auto;padding-left:10px;">
+                    <span class="switch_auth" style="padding-top:20px;font-size:22px;">Нет учетной записи? <a class="reg_btn">Создать!</a></span>
+                </div>
+            </div>
+        </div>
+        <div class="user hidden">
+            <div class="user_block">
+                <p>Имя:<span class="user_name"></span></p>
+                <p>Mail:<span class="user_mail"></span></p>
+                <p>Дата регистрации:<span class="user_date"></span></p>
+            </div>
+            <a style="position:absolute;top:0%;right:0%;"><button type="submit" class="colorButton exit_btn">Выйти</button></a>
+            <div style="">
+                <h3 style="color:grey;font-weight:300">Вы просматривали:</h3>
+                <div class="history_wrapper">
+                    <div class="history" style="display:flex;flex-direction:row-reverse;justify-content:flex-end;overflow:hidden;"></div>
+                </div>
+            </div>
+        </div>
+        <div charset="utf-8" class="status" style="color:red;font-size:20px;">@util.autorizeee(n, m, p)</div>
+    </div>
+</div>
+<div class="data"></div>
+<script>
+    if (document.querySelector('.status').innerHTML != "") {
+        if (document.querySelector('.status').innerHTML.includes("~")) {
+            localStorage.setItem("user_loged", document.querySelector('.status').innerHTML);
+            document.querySelector('.status').innerHTML = "";
+            document.location.href = encodeURI("/account.cshtml");
+        } else {}
+    }
+    if (localStorage.getItem("user_loged") != "") {
+        document.querySelector('.login').classList.add('hidden');
+        document.querySelector('.user').classList.remove('hidden');
+        document.querySelector('.register').classList.add('hidden');
+        let u_data = localStorage.getItem("user_loged").split('~');
+        document.querySelector('.user_name').innerHTML = u_data[0];
+        document.querySelector('.user_mail').innerHTML = u_data[1];
+        document.querySelector('.user_date').innerHTML = u_data[2];
+        if (localStorage.getItem("story") != null && localStorage.getItem("storys_id") != null) {
+            document.querySelector('.history').innerHTML = "";
+            let watched = localStorage.getItem("story").split('~');
+            let w_ids = localStorage.getItem("storys_id").split('~');
+            for (let i = 0; i < watched.length; i++) {
+                if (watched[i] != "" && w_ids[i] != "") {
+                    document.querySelector('.history').innerHTML += " <a href='article?id=" + w_ids[i] + "'><img src='" + watched[i] + "' class='i'></a>"
+                }
+            }
+        };
+    } else {
+        localStorage.setItem("story", "");
+        localStorage.setItem("storys_id", "");
+    }
+    let log_btn = document.querySelector('.log_btn');
+log_btn.addEventListener("click", () => {
+    document.querySelector('.login').classList.remove('hidden');
+    document.querySelector('.user').classList.add('hidden');
+    document.querySelector('.register').classList.add('hidden');
+});
+let reg_btn = document.querySelector('.reg_btn');
+reg_btn.addEventListener("click", () => {
+    document.querySelector('.login').classList.add('hidden');
+    document.querySelector('.user').classList.add('hidden');
+    document.querySelector('.register').classList.remove('hidden');
+});
+let exit_btn = document.querySelector('.exit_btn');
+exit_btn.addEventListener("click", () => {
+    localStorage.setItem("user_loged", "");
+    document.querySelector('.login').classList.remove('hidden');
+    document.querySelector('.user').classList.add('hidden');
+    document.querySelector('.register').classList.add('hidden');
+    localStorage.setItem("story", "");
+    localStorage.setItem("storys_ids", "");
+});
+let register_btn = document.querySelector(".register_btn");
+register_btn.addEventListener("click", () => {
+    let inputs = document.querySelectorAll('input');
+    var reg = /^[\w-\.]+@@[\w-]+\.[a-z]{2,4}$/i;
+    let _bool;
+    if (inputs[0].value) { _bool = false; }
+    if (reg.test(inputs[1].value) == false) {
+        _bool = false;
+        document.querySelector('.status').innerHTML = "Wrong email";
+    } else { _bool = true; }
+    if (inputs[2].value != inputs[3].value) { _bool = false;document.querySelector('.status').innerHTML = "Passwords are not the same";};
+    if (_bool) {
+        document.querySelector('.status').innerHTML = "";
+        document.location.href = encodeURI("/account.cshtml?name=" + inputs[0].value + "&mail=" + inputs[1].value + "&pass=" + inputs[2].value);
+    }
+});
+let login_btn = document.querySelector('.login_btn');
+login_btn.addEventListener("click", () => {
+    let inputs = document.querySelectorAll('input');
+    var reg = /^[\w-\.]+@@[\w-]+\.[a-z]{2,4}$/i;
+    if (reg.test(inputs[4].value)) {
+        document.querySelector('.status').innerHTML = "";
+        document.location.href = encodeURI("/account.cshtml?mail=" + inputs[4].value + "&pass=" + inputs[5].value);
+    } else { document.querySelector('.status').innerHTML = "Wrong email"; }
+});
+</script>
